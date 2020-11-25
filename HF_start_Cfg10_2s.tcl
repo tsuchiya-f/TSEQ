@@ -1,0 +1,10 @@
+syslog "Set HF Cfg10"
+tcsend LWC08054 {LWP94000 HF} {LWP99010 10} checks ALL
+waittime 10.0000
+
+syslog "Enable HF"
+tcsend LWC08041 {LWP93000 IGNORE} {LWP92000 IGNORE} {LWP91000 ENABLE} checks ALL
+waittime 2.0000
+
+syslog "Disable HF"
+tcsend LWC08042 {LWP93100 IGNORE} {LWP92100 IGNORE} {LWP91100 DISABLE} checks ALL
