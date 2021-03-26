@@ -29,10 +29,13 @@ tcsend LWC08057 checks ALL
 waittime 1.0000
 
 
-syslog "Get HF HK every second"
+syslog "Get HF HK every miniute"
 tcsend LWC03006 {LWP31000 HF_REG} checks ALL
-tcsend LWC03130 {LWP31000 HF_REG} {LWP32000 1} checks ALL
+tcsend LWC03130 {LWP31000 HF_REG} {LWP32000 60} checks ALL
 tcsend LWC03005 {LWP31000 HF_REG} checks ALL
+tcsend LWC03006 {LWP31000 HF_NOMINAL} checks ALL
+tcsend LWC03130 {LWP31000 HF_NOMINAL} {LWP32000 60} checks ALL
+tcsend LWC03005 {LWP31000 HF_NOMINAL} checks ALL
 
 syslog "Power on HF"
 tcsend LWC08052 {LWP95000 HF} checks ALL
